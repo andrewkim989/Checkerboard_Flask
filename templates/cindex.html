@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Checkerboard</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                /*border: dotted 1px red;*/
+            }
+            table tr td {
+                width: 50px;
+                height: 50px;
+            }
+            #wrapper{
+                margin: 0px;
+            }
+            .color1 {
+                background-color: blue;
+            }
+            .color2 {
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "wrapper">
+            <table>
+            {% for y in range(column): %}
+                <tr>
+                    {% for x in range(row): %}
+                    <td class = 'color{{ (x + y) % 2 + 1}}'></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </body>
+    
+</html>
